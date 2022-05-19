@@ -4,7 +4,7 @@ import random
 
 TOKEN = ('insert token here')
 
-client = commands.Bot(command_prefix=";")
+client = commands.Bot(command_prefix=".")
 
 # shows that the bot is connected
 @client.event
@@ -44,39 +44,19 @@ async def on_message(message):
         await message.channel.send(response)
 
 
-#@client.event
-#async def on_message(message):
-#    if message.author == client.user:
-#        return
-#
-#    
-#    random_number = random.randint(1, 100)
-#
-#
-#    #the game
-#    def algorithmGame(rando_number):
-#
-#
-#        rando_number = random_number
-#
-#        guess = int(input('I have thought of a number between 1 and 100. I\'ll kill you if you get it wrong! Write your answer here: '))
-#
-#        if guess == rando_number:
-#            response = (f"Congrats! You guessed right!! I won't actually kill you now!")
-#        elif guess > rando_number:
-#            response = (f"A bit lower than that!")
-#            algorithmGame(rando_number)
-#        elif guess < rando_number:
-#            response = (f"A bit higher than that!")
-#            algorithmGame(rando_number)
-#        else:
-#            response = ('what')
-#            algorithmGame(rando_number)
-#    
-#    if message.content == 'game':
-#        response = algorithmGame(random_number)
-#        await message.channel.send(response)
     
+
+#RNG
+@client.event
+async def yeah(talk):
+    if talk.author == client.user:
+        return
+
+    if talk.content == 'RNG':
+        response = random.randint(1, 100)
+        await talk.channel.send(response)
+
+
 
 
 
