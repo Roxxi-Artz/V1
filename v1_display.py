@@ -54,7 +54,8 @@ async def yeah(talk):
 
     if talk.content == 'RNG':
         response = random.randint(1, 100)
-        await talk.channel.send(response)
+        contents = str(response)
+        await talk.channel.send(contents)
 
 
 
